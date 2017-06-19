@@ -318,7 +318,7 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             tv7.setClickable(false);
             tv8.setClickable(false);
             tv9.setClickable(false);
-            
+
             player1.setBackgroundColor(getResources().getColor(R.color.input_register_bg));
             player2.setBackgroundColor(getResources().getColor(R.color.input_register_bg));
             Re.setBackgroundColor(getResources().getColor(R.color.colorAccent));
