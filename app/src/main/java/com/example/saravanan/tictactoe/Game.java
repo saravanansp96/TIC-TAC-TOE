@@ -278,6 +278,16 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             else
                 message="PLAYER 2 WINS!";
 
+            tv1.setClickable(false);
+            tv2.setClickable(false);
+            tv3.setClickable(false);
+            tv4.setClickable(false);
+            tv5.setClickable(false);
+            tv6.setClickable(false);
+            tv7.setClickable(false);
+            tv8.setClickable(false);
+            tv9.setClickable(false);
+
             player1.setBackgroundColor(getResources().getColor(R.color.input_register_bg));
             player2.setBackgroundColor(getResources().getColor(R.color.input_register_bg));
             Re.setBackgroundColor(getResources().getColor(R.color.colorAccent));
@@ -299,6 +309,16 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             String message;
             message = "MATCH DRAW!";
 
+            tv1.setClickable(false);
+            tv2.setClickable(false);
+            tv3.setClickable(false);
+            tv4.setClickable(false);
+            tv5.setClickable(false);
+            tv6.setClickable(false);
+            tv7.setClickable(false);
+            tv8.setClickable(false);
+            tv9.setClickable(false);
+            
             player1.setBackgroundColor(getResources().getColor(R.color.input_register_bg));
             player2.setBackgroundColor(getResources().getColor(R.color.input_register_bg));
             Re.setBackgroundColor(getResources().getColor(R.color.colorAccent));
