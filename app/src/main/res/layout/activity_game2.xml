@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/RelativeLay"
     android:background="@color/input_register_bg"
 
     tools:context="com.example.saravanan.tictactoe.Game">
@@ -199,5 +200,29 @@
             android:layout_row="2"
             android:layout_column="2" />
     </GridLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/tvResult"
+        android:layout_above="@+id/gridLayout"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="TAP TO CONTINUE!"
+        android:visibility="invisible"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white"
+        android:id="@+id/tvtap"
+        android:layout_below="@+id/gridLayout"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

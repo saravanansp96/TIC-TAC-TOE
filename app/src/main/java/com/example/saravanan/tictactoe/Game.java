@@ -6,16 +6,21 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Game extends AppCompatActivity implements View.OnClickListener {
-    public TextView player1,player2,tv1,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9;
+    public TextView player1,player2,tv1,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9,Re,tap;
+    public RelativeLayout relativeLayout;
     int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game2);
+
+        relativeLayout=(RelativeLayout)findViewById(R.id.RelativeLay);
+
         player1=(TextView)findViewById(R.id.pl1);
         player2=(TextView)findViewById(R.id.pl2);
         tv1=(TextView)findViewById(R.id.textView1);
@@ -27,6 +32,8 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
         tv7=(TextView)findViewById(R.id.textView7);
         tv8=(TextView)findViewById(R.id.textView8);
         tv9=(TextView)findViewById(R.id.textView9);
+        Re =(TextView)findViewById(R.id.tvResult);
+        tap=(TextView)findViewById(R.id.tvtap);
 
         i=0;
         player1.setBackgroundColor(getResources().getColor(R.color.colorAccent));
@@ -271,56 +278,42 @@ public class Game extends AppCompatActivity implements View.OnClickListener {
             else
                 message="PLAYER 2 WINS!";
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            player1.setBackgroundColor(getResources().getColor(R.color.input_register_bg));
+            player2.setBackgroundColor(getResources().getColor(R.color.input_register_bg));
+            Re.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+            Re.setText(message);
+            tap.setVisibility(View.VISIBLE);
 
-            // set title
-            alertDialogBuilder.setTitle(" ");
+            relativeLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(Game.this,Game.class);
+                    startActivity(intent);
+                }
+            });
 
-            // set dialog message
-            alertDialogBuilder
-                    .setMessage(message)
-                    .setCancelable(false)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            // if this button is clicked, close
-                            // current activity
-                            Game.this.finish();
-                        }
-                    });
 
-            // create alert dialog
-            AlertDialog alertDialog = alertDialogBuilder.create();
-
-            // show it
-            alertDialog.show();
         }
         if(result.equals("draw"))
         {
             String message;
             message = "MATCH DRAW!";
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            player1.setBackgroundColor(getResources().getColor(R.color.input_register_bg));
+            player2.setBackgroundColor(getResources().getColor(R.color.input_register_bg));
+            Re.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+            Re.setText(message);
+            tap.setVisibility(View.VISIBLE);
 
-            // set title
-            alertDialogBuilder.setTitle(" ");
+            relativeLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(Game.this,Game.class);
+                    startActivity(intent);
+                }
+            });
 
-            // set dialog message
-            alertDialogBuilder
-                    .setMessage(message)
-                    .setCancelable(false)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            // if this button is clicked, close
-                            // current activity
-                            Game.this.finish();
-                        }
-                    });
 
-            // create alert dialog
-            AlertDialog alertDialog = alertDialogBuilder.create();
-
-            // show it
-            alertDialog.show();
         }
         i++;
     }
